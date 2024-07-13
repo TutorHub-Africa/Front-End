@@ -4,7 +4,7 @@ import "../../styles/Search_Courses/Course_Card.css";
 import Star from "../../assets/star.png";
 import course_img_placeholder from "../../assets/error.png";
 
-function Course_Card(){
+function Course_Card({programId}){
     const [courseImage, setCourseImage] = useState(course_img_placeholder);
     const [subject , setSubject] = useState("Subject");
     const [review , setReview] = useState(0.0);
@@ -12,9 +12,18 @@ function Course_Card(){
     const [tutorName, setTutorName] = useState("Tutor Name");
     const [price, setPrice] = useState(0.0);
 
-    // useEffect(() => {
-       
-    // }, []);
+  //   useEffect(() => {
+  //     fetch(`API ENDPOINT TO GET COURSE INFO/${programId}`)
+  //     .then(response => response.json())
+  //     .then(data => {
+  //         setCourseImage(data.courseImage);
+  //         setSubject(data.subject);
+  //         setReview(data.review);
+  //         setTitle(data.title);
+  //         setTutorName(data.tutorName);
+  //         setPrice(data.price);
+  //     });
+  // }, [courseId]);
 
     function handleEnroll(){
         console.log("Enroll button clicked");

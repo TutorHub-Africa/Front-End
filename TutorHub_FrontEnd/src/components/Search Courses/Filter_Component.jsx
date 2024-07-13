@@ -3,7 +3,7 @@ import React, { useEffect, useState } from 'react';
 
 import star from '../../assets/star.png';
 
-const Filter_Component = () => 
+const Filter_Component = ({setSelectedPrograms}) => 
   {
     const [showMoreSubjects, setShowMoreSubjects] = useState(false);
     const [showMoreLanguages, setShowMoreLanguages] = useState(false);

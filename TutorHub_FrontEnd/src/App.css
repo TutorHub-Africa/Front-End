@@ -6,3 +6,25 @@
     font-style: normal;
     font-variation-settings:"slnt" 0;
 }
+
+.app {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+  }
+  
+  header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  
+  .main {
+    flex: 1;
+  }
+  
+  footer {
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+  }
