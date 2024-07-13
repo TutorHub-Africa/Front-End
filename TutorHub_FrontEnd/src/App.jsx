@@ -7,11 +7,14 @@ import Courses from "./components/Courses";
 import About_Us from "./components/About_Us";
 import Footer from "./components/Footer";
 import Course_Card from "./components/Search Courses/Course_Card";
+import Course_Search_Main from "./components/Search Courses/Course_Search_Main";
 
 function App() {
   return (
     <>
-    <Course_Card />
+    <Course_Search_Main />
+
+    {/* <Course_Card /> */}
 
     {/* <Footer/> */}
     {/* <Router>
