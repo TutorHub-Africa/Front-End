@@ -6,11 +6,14 @@ import Navbar from "./components/NavBar";
 import Courses from "./components/Courses";
 import About_Us from "./components/About_Us";
 import Footer from "./components/Footer";
+import Course_Card from "./components/Search Courses/Course_Card";
 
 function App() {
   return (
     <>
-    <Footer/>
+    <Course_Card />
+
+    {/* <Footer/> */}
     {/* <Router>
       <Navbar />
         <Routes>
