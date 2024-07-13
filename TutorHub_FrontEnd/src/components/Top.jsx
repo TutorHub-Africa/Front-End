@@ -1,4 +1,4 @@
-import '../styles/header/Header.css';
+import '../styles/header/Top.css';
 
 import phoneIcon from "../assets/header_assets/phone.png";
 import twitterIcon from '../assets/header_assets/Symbol-1.png';
@@ -8,7 +8,7 @@ import youtubeIcon from '../assets/header_assets/Symbol-4.png';
 import facebookIcon from '../assets/header_assets/Symbol-5.png';
 
 
-function Header(){
+function Top(){
     return (
     <div className="container">
         <div className="contact-info">
@@ -28,4 +28,4 @@ function Header(){
     );
 }
 
-export default Header;
+export default Top;
