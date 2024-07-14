@@ -12,7 +12,9 @@
     align-items: center;
     position: relative;
     height: var(--header-height);
-    margin: 1.5rem;
+    width: 100%;
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
    }
 
 .navbar-navigators{
@@ -56,6 +58,7 @@
 }
 
 .login-button-container button {
+    margin-right: 20px;
     padding: 10px 25px;
     font-size: 15px;
     font-weight: 500;

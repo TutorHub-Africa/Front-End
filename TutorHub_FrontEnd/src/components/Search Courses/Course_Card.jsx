@@ -56,7 +56,7 @@ function Course_Card({programId}){
             <button 
                 className="enroll-button" 
                 onClick={() => {handleEnroll()}}
-            >
+                >
                 Enroll Now
             </button>
             <span className="price">${price}</span>

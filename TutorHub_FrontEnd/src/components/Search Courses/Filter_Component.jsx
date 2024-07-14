@@ -3,37 +3,20 @@ import React, { useEffect, useState } from 'react';
 
 import star from '../../assets/star.png';
 
-const Filter_Component = ({setSelectedPrograms}) => 
+const Filter_Component = ({
+  setSelectedPrograms,
+  selectedSubjects,
+  setSelectedSubjects,
+  selectedLanguages,
+  setSelectedLanguages,
+  selectedPayTypes,
+  setSelectedPayTypes,
+  selectedRating,
+  setSelectedRating
+  }) => 
   {
     const [showMoreSubjects, setShowMoreSubjects] = useState(false);
     const [showMoreLanguages, setShowMoreLanguages] = useState(false);
-
-    const [selectedSubjects, setSelectedSubjects] = useState([]);
-    const [selectedLanguages, setSelectedLanguages] = useState([]);
-    const [selectedPayTypes, setSelectedPayTypes] = useState(['paid']);
-    const [selectedRating, setSelectedRating] = useState([]);
-
-    /*
-    const selectedSubjects = [
-      { name: 'English'},
-    ];
-
-    const selectedLanguages = ['Amharic', 'English'];
-    */
-
-   /*
-    useEffect(() => {
-      fetch('API END-POINT TO GET LIST OF SUBJECTS')
-        .then(response => response.json())
-        .then(data => setSubjects(data));
-    }, []); 
-
-    useEffect(() => {
-      fetch('API END-POINT TO GET LIST OF LANGUAGES')
-        .then(response => response.json())
-        .then(data => setLanguages(data));
-    }, []);
-    */
 
     const fetchPossiblePrograms = () => {
       const requestOptions = {
@@ -50,6 +33,7 @@ const Filter_Component = ({setSelectedPrograms}) =>
         });
     }
 
+
     const handleSelectSubject = async(subject, isChecked) => {
       if(isChecked){
         setSelectedSubjects(prev => [...prev, subject])
@@ -60,6 +44,7 @@ const Filter_Component = ({setSelectedPrograms}) =>
 
       fetchPossiblePrograms();
     }
+
 
     const handleSelectLanguage = async(language, isChecked) => {
       if(isChecked){
@@ -72,6 +57,7 @@ const Filter_Component = ({setSelectedPrograms}) =>
       fetchPossiblePrograms();
     }
 
+
     const handleSelectPayType = async(pay_type, isChecked) => {
       if(isChecked){
         setSelectedPayTypes(prev => [...prev, pay_type])
@@ -82,6 +68,7 @@ const Filter_Component = ({setSelectedPrograms}) =>
 
       fetchPossiblePrograms();
     }
+    
 
     const handleSelectRating = async(rating, isChecked) => {
       if(isChecked){

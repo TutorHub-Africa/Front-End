@@ -9,7 +9,7 @@ import Top from "./Top";
 
 function Header(){
     return(
-    <div className="header">
+    <header className="header">
         <Top/>
 
         <nav className="nav_container">
@@ -46,7 +46,7 @@ function Header(){
             </div>
     
         </nav>
-    </div>
+    </header>
     );
 }
 

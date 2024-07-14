@@ -1,4 +1,3 @@
-import pointer from "../../assets/pointer.png";
 import "../../styles/Search_Courses/Course_Search_Head.css";
 import "../../styles/Search_Courses/Course_Card.css";
 
