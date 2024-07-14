@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import "../../styles/Search_Courses/Course_Card.css";
 
 import Star from "../../assets/star.png";
@@ -23,10 +24,12 @@ function Course_Card({programId}){
   //         setTutorName(data.tutorName);
   //         setPrice(data.price);
   //     });
-  // }, [courseId]);
+  // }, [programId]);
+
+    const navigate = useNavigate();
 
     function handleEnroll(){
-        console.log("Enroll button clicked");
+      navigate('/');
     };
 
     return (

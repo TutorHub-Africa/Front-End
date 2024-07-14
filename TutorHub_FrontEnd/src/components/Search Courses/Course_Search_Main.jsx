@@ -1,6 +1,3 @@
-////////////UNRESOLVED ISSUE///////////
-// Positioning of the filter component is not good enough
-
 import React, { useState } from 'react';
 
 import '../../styles/Search_Courses/Course_Search_Main.css';
@@ -11,7 +8,7 @@ import Course_Search_Head from './Course_Search_Head';
 import Search_Bar from './Search_Bar';
 
 function Course_Search_Main(){
-    const [selectedPrograms, setSelectedPrograms] = useState([1,3,4,4,5,5,5,5,5,5,6,7]);
+    const [selectedPrograms, setSelectedPrograms] = useState([1,3,4,5,6,7]);
 
     const [selectedSubjects, setSelectedSubjects] = useState([]);
     const [selectedLanguages, setSelectedLanguages] = useState([]);
@@ -70,10 +67,9 @@ function Course_Search_Main(){
                 />
 
                 <div className="program-list">
-                    {selectedPrograms.map((program_id) => (
-                        <div className='course-card'>
+                    {selectedPrograms.map((program_id, index) => (
+                        <div className='course-card' key={index} >
                         <Course_Card
-                            key={program_id}
                             programId={program_id}
                         />
                         </div>
