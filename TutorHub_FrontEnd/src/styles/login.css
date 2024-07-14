@@ -49,17 +49,20 @@ div .welcome{
 }
 .text{
     padding-bottom: 30px;
-    padding-top: 30px;
+    padding-top: 15px;
     font-size: 16px;
+    font-style: italic;
     
 }
-.continue-with{
+.continue-with a{
     display: flex;
     background-color: white;
     justify-content: center;
     align-items: center;
     margin-bottom: 30px;
     gap: 10px;
+    color: black;
+    text-decoration: none;
 }
 .continue-with img{
     width: 15px;
@@ -83,12 +86,13 @@ div .welcome{
     font-weight: 550;
 }
 .input input{
-    width: 500px;
-    height: 20px;
+    width: 588px;
+    height: 50px;
     background-color: white;
     padding-left: 20px;
     border-color: #6D6C80;
     border: none;
+    font-size: 16px;
 }
 
 .remember{
@@ -99,7 +103,7 @@ div .welcome{
     
 }
 .forgot{
-    color: #5751E1;
+    text-decoration: none;
     
 }
 
@@ -117,125 +121,7 @@ div .welcome{
     gap: 10px;
     padding-left: 150px;
 }
-.sign-up{
-    color: #5751E1;
+.signup a{
+    text-decoration: none;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* 
-.container {
-    display: flex;
-    flex-direction: column;
-    width: 1920px;
-    height: 1246px;
-    margin: auto;
-    margin-top: 200px;
-    margin-bottom: 200px;
-    background-color: white;
-    padding-top: 30px;
-}
-
-.header{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    height: 300px;
-    background-color: #BBB0DB;
-    gap: 9px;
-    margin-top: 30px;
-}
-
-.text{
-    color: #3c009d;
-    font-size: 48px;
-    font-weight: 700;
-}
-
-.underline{
-    width: 60px;
-    height: 6px;
-    background: #3c009d;
-    border-radius: 9px;
-}
-
-.inputs{
-    display: flex;
-    flex-direction: column;
-    margin-top: 50px;
-    gap: 25px;
-}
-.input{
-    display: flex;
-    width: 480px;
-    height: 80px;
-    margin: auto;
-    align-items: center;
-    background: #eaeaea;
-    border-radius: 6px;
-}
-
-.input img{
-    margin: 0px 30px;
-    width: 25px;
-    height: auto;
-}
-
-.input input{
-    width: 400px;
-    height: 50px;
-    background-color: transparent;
-    font-size: 20px;
-    color: #797979;
-    border: none;
-    outline: none;
-}
-
-.forgot-pass{
-    margin-top: 27px;
-    padding-left: 62px;
-    font-size: 18px;
-    color: #4c00b4;
-    cursor: pointer;
-
-}
-.submit-cont{
-    display: flex;
-    gap: 30px;
-    margin: 60px auto;
-}
-
-.submit{
-    display: flex;
-    width: 220px;
-    height: 59px;
-    justify-content: center;
-    align-items: center;
-    color: #fff;
-    background: #4c00b4;
-    border-radius: 50px;
-    font-size: 20px;
-    font-weight: 700;
-    cursor: pointer;
-} */
