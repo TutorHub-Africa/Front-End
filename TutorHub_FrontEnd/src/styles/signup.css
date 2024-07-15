@@ -1,0 +1,136 @@
+.sign_container{
+    width: 100%;
+    height: 1420px;
+    background-color: #fff;
+    color: black;
+    font-family:  sans-serif;
+
+}
+.sign_top{
+    display: flex;
+    flex-direction: column;
+    padding-top: 107px;
+    text-align: left;
+    padding-left: 255px;
+    height: 300px;
+    background-color: #BBB0DB;
+    gap: 16px;
+}
+.sign_student{
+    font-size: 40px;
+    font-weight: 700;
+}
+.sign_links{
+    display: flex;
+    font-size: 16px;
+    gap: 3px;
+}
+.sign{
+    color: #5751E1;
+}
+.sign_middle{
+    width: 690px;
+    height: 840px;
+    margin: 120px auto;
+    background-color: #E1E1E1;
+    gap: 25px;
+    justify-content: center;
+}
+.sign_middle > div{
+    width: 85%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div .sign_welcome{
+    padding-top: 40px;
+    font-size: 36px;
+    font-weight: 700;
+}
+.sign_text{
+    padding-bottom: 30px;
+    padding-top: 15px;
+    font-size: 16px;
+    font-style: italic;
+    
+}
+.sign_continue-with a{
+    display: flex;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+    gap: 10px;
+    color: black;
+    text-decoration: none;
+}
+.sign_continue-with img{
+    width: 15px;
+    height: 15px;
+}
+.sign_or{
+    display: flex;
+    margin-bottom: 15px;
+    text-align: center;
+    align-items: center;
+    height: 10px;
+}
+.sign_or div{
+    width: 95%;
+    height: 1px;
+    background-color: #6D6C80;
+}
+.sign_name{
+    display: flex;
+    column-gap: 20px;
+
+}
+.sign_name div input{
+    width: 284px;
+
+}
+.sign_input div{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: 550;
+}
+.sign_input input{
+    width: 588px;
+    height: 50px;
+    background-color: white;
+    padding-left: 20px;
+    border-color: #6D6C80;
+    border: none;
+    font-size: 16px;
+}
+
+.sign_remember{
+    display: flex;
+    gap: 200px;
+    margin-top: 40px;
+    padding-left: 20px;
+    
+}
+.sign_forgot{
+    text-decoration: none;
+    
+}
+
+.sign_signin{
+    display: block;
+    margin: 30px auto;
+    width: 588px;
+    height: 54px;
+    border-radius: 20px;
+    background-color: #FFC224;
+    font-size: 16px;
+}
+.sign_signup{
+    display: flex;
+    gap: 10px;
+    padding-left: 150px;
+}
+.sign_signup a{
+    text-decoration: none;
+}
+
