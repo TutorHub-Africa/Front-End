@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 // import Course_Search_Main from "./components/Search Courses/Course_Search_Main";
 // import Details_Card from "./components/Course_Enroll/Details_Card";
 import Course_Description_Card from "./components/Course_Enroll/Course_Description_Card.jsx";
+import Dashboard from "./components/Course_Dashboard/Dashboard.jsx";
 
 function App() {
   return (
@@ -21,7 +22,7 @@ function App() {
             <div className="content">
               <Routes>
                 {/* <Route path="/courses" element={<Course_Search_Main />} /> */}
-                <Route path="/courses" element={<Course_Description_Card />} />
+                <Route path="/courses" element={<Dashboard />} />
               </Routes>
             </div>
           </Router>

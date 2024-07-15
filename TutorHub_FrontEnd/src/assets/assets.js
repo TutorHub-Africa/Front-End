@@ -23,3 +23,13 @@ export {default as mpesa} from './mpesa.png';
 export {default as cbe} from './cbe.png';
 export {default as payment} from './payment.png';
 export {default as upload} from './upload.png';
+
+export {default as calendarIcon} from './calendarIcon.png';
+export {default as downloadIcon} from './downloadIcon.png'
+export {default as linkIcon} from './linkIcon.png'
+
+export {default as rateStar} from './rateStar.png'
+
+export {default as linkedinIcon} from './linkedinIcon.png'
+export {default as emailIcon} from './emailIcon.png'
+export {default as telegramIcon} from './telegramIcon.png'

@@ -2,13 +2,13 @@ import "../../styles/Course_Enroll/Course_Description_body.css";
 import { starIcon, blankStarIcon, quoteIcon } from "../../assets/assets.js";
 import {useState , useEffect} from "react";
 
-const Review_Cards = ({programId}) => {
+const Review_Card = ({reviewID}) => {
     const [reviewName, setReviewName] = useState("Name");
     const [reviewRating, setReviewRating] = useState(2);
     const [reviewText, setReviewText] = useState("This is a sample review ");
 
     // useEffect(() => {
-    //     fetch(`API ENDPOINT TO GET COURSE INFO/${programId}`)
+    //     fetch(`API ENDPOINT TO GET COURSE INFO/${reviewID}`)
     //     .then(response => response.json())
     //     .then(data => {
     //         setReviewName(data.reviewName);
@@ -16,7 +16,7 @@ const Review_Cards = ({programId}) => {
     //         setReviewText(data.reviewText);
     
     //     });
-    // }, [programId]);
+    // }, [reviewID]);
 
     return (
         <div className="review-card">
@@ -24,7 +24,7 @@ const Review_Cards = ({programId}) => {
                 <div className="review-card-profile-info">
                     <div>
                         <div className="review-card-profile-name">
-                           {reviewName} {programId}
+                           {reviewName} {reviewID}
                         </div>
                         <div className="review-card-profile-rating">
                             {[...Array(5)].map((star, index) => {
@@ -50,4 +50,4 @@ const Review_Cards = ({programId}) => {
         );
 }
 
-export default Review_Cards;
+export default Review_Card;

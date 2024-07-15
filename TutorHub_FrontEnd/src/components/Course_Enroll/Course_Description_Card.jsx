@@ -8,7 +8,7 @@ import course_img_placeholder from "../../assets/error.png";
 
 import OverView_Card from './Overview_Card'; 
 import About_Tutor_Card from './About_Tutor_Card';
-import Review_Cards from './Review_Cards';
+import Review_Card from './Review_Card.jsx';
 import Payment_Card from './Payment_Card.jsx';
 import Details_Card from './Details_Card.jsx';
 import Course_Search_Head from '../Search_Courses/Course_Search_Head.jsx';
@@ -31,7 +31,7 @@ function Course_Description_Card({programId}){
     
     const [courseImage, setCourseImage] = useState(course_img_placeholder);
     const [subject , setSubject] = useState("Subject");
-    const [review, setReview] = useState(0);
+    const [rating, setRating] = useState(0);
     const [title , setTitle] = useState("Title");
     const [tutorName, setTutorName] = useState("Tutor Name");
     const [price, setPrice] = useState(0.0);
@@ -42,7 +42,7 @@ function Course_Description_Card({programId}){
   //     .then(response => response.json())
   //     .then(data => {
   //         setCourseImage(data.courseImage);
-  //         setReview(data.review);
+  //         setRating(data.rating);
   //         setSubject(data.subject);
   //         setTitle(data.title);
   //         setTutorName(data.tutorName);
@@ -67,7 +67,7 @@ function Course_Description_Card({programId}){
                     <div className="description-rat">
                         <div className="description-starContainer">
                             <img src={Star} alt="star" />
-                            <p>{review} Reviews</p>
+                            <p>{rating} Reviews</p>
                         </div>
                     </div>
                 </div>
@@ -111,13 +111,13 @@ function Course_Description_Card({programId}){
                 {activeButton === "button1" && <OverView_Card programId={programId}/>}
                 {activeButton === "button2" && <About_Tutor_Card programId={programId}/>}
                 {activeButton === "button3" &&
-                    <div className='review-div'>
-                        <div className="review-cards-container">
-                            <Review_Cards programId={reviewId[currentReviewIndex]} />
+                    <div className='rating-div'>
+                        <div className="rating-cards-container">
+                            <Review_Card reviewID={reviewId[currentReviewIndex]} />
                         </div>
-                        <div className='review-nav-buttons'>
-                            <img src={buttonLeft} onClick={handleLeftClick} className='review-nav-but'/>
-                            <img src={buttonRight} onClick={handleRightClick} className='review-nav-but'/>
+                        <div className='rating-nav-buttons'>
+                            <img src={buttonLeft} onClick={handleLeftClick} className='rating-nav-but'/>
+                            <img src={buttonRight} onClick={handleRightClick} className='rating-nav-but'/>
                         </div>
                     </div>
                 }
