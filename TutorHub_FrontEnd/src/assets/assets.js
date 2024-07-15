@@ -9,3 +9,17 @@ export {default as gradeIcon} from './Course_Enroll/gradeIcon.png';
 export {default as evaluationIcon} from './Course_Enroll/evaluationIcon.png';
 export {default as timeIcon} from './Course_Enroll/timeIcon.png';
 export {default as seatsIcon} from './Course_Enroll/seatsIcon.png';
+
+export {default as starIcon} from './star.png';
+export {default as quoteIcon} from './quoteIcon.png';
+export {default as blankStarIcon} from './blankStarIcon.png';
+
+export {default as buttonLeft} from './buttonLeft.png';
+export {default as buttonRight} from './buttonRight.png';
+
+export {default as awash} from './awash.png';
+export {default as telebirr} from './telebirr.png';
+export {default as mpesa} from './mpesa.png';
+export {default as cbe} from './cbe.png';
+export {default as payment} from './payment.png';
+export {default as upload} from './upload.png';
