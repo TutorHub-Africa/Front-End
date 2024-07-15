@@ -4,7 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
-// import Course_Search_Main from "./components/Search Courses/Course_Search_Main";
+import Course_Search_Main from "./components/Search_Courses/Course_Search_Main.jsx";
 // import Details_Card from "./components/Course_Enroll/Details_Card";
 import Course_Description_Card from "./components/Course_Enroll/Course_Description_Card.jsx";
 import Dashboard from "./components/Course_Dashboard/Dashboard.jsx";
@@ -22,7 +22,7 @@ function App() {
             <div className="content">
               <Routes>
                 {/* <Route path="/courses" element={<Course_Search_Main />} /> */}
-                <Route path="/courses" element={<Dashboard />} />
+                <Route path="/courses" element={<Dashboard/>} />
               </Routes>
             </div>
           </Router>

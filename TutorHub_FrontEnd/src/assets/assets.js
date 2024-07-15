@@ -29,6 +29,7 @@ export {default as downloadIcon} from './downloadIcon.png'
 export {default as linkIcon} from './linkIcon.png'
 
 export {default as rateStar} from './rateStar.png'
+export {default as rateStarFilled} from './rateStarFilled.svg'
 
 export {default as linkedinIcon} from './linkedinIcon.png'
 export {default as emailIcon} from './emailIcon.png'

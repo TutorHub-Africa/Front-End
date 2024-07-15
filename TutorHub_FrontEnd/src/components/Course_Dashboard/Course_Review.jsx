@@ -1,9 +1,12 @@
 import { useState, useEffect } from "react";
 import Review_Card from "../Course_Enroll/Review_Card";
-import { buttonLeft, buttonRight, rateStar} from "../../assets/assets";
+import { buttonLeft, buttonRight, rateStar, rateStarFilled} from "../../assets/assets";
 
 function Course_Review({programId}){
     const [reviewId, setReviewId] = useState([55, 92, 66, 3]);
+
+    const [rating, setRating] = useState(0);
+    const [hover, setHover] = useState(0);
 
     //   useEffect(() => {
     //     fetch(`API ENDPOINT TO GET COURSE INFO/${programId}`)
@@ -42,11 +45,27 @@ function Course_Review({programId}){
             <div className="submit-review-container">
                 <h2> Rate & Review</h2>
                 <div className="rate-stars">
-                    <img src={rateStar}/>
-                    <img src={rateStar}/>
-                    <img src={rateStar}/>
-                    <img src={rateStar}/>
-                    <img src={rateStar}/>
+                    {[...Array(5)].map((star, index) => {
+                        const ratingValue = index + 1;
+
+                        return (
+                            <label key={index}>
+                                <input 
+                                    type="radio" 
+                                    name="rating" 
+                                    value={ratingValue} 
+                                    onClick={() => setRating(ratingValue)}
+                                    className="rating-radio"
+                                />
+                                <img 
+                                    src={ratingValue <= (hover || rating) ? rateStarFilled : rateStar} 
+                                    onMouseEnter={() => setHover(ratingValue)}
+                                    onMouseLeave={() => setHover(0)}
+                                    className="review-rate-star"
+                                />
+                            </label>
+                        );
+                    })}
                 </div>
 
                 <input 
