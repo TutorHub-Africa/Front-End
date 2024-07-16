@@ -11,6 +11,7 @@ import Tutor_Dashboard from "./components/Tutor_Course_Dashboard/Tutor_DashBoard
 import Student_Course_List from "./components/Student_Main_Page/Student_Course_List.jsx";
 import Tutor_Course_List from "./components/Tutor_Main_Page/Tutor_Course_List.jsx";
 import Tutor_Course_Add from "./components/Tutor_Course_Add/Tutor_Course_Add.jsx";
+import Login from "./components/Login_Signup/Login.jsx";
 
 function App() {
   return (
@@ -37,7 +38,7 @@ function App() {
                 <Route path="/tutor/dashboard" element={<Tutor_Dashboard/>} />
                 <Route path="/tutor/add_course" element={<Tutor_Course_Add />} />
 
-                <Route path="/about_us" element={<Tutor_Course_Add/>} />
+                <Route path="/student/about_us" element={<Login/>} />
               </Routes>
             </div>
           </Router>
