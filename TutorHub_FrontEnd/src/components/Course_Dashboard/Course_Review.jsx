@@ -3,7 +3,7 @@ import Review_Card from "../Course_Enroll/Review_Card";
 import { buttonLeft, buttonRight, rateStar, rateStarFilled} from "../../assets/assets";
 
 function Course_Review({programId}){
-    const [reviewId, setReviewId] = useState([55, 92, 66, 3]);
+    const [reviewId, setReviewId] = useState([1,2,3,4,5]);
 
     const [rating, setRating] = useState(0);
     const [hover, setHover] = useState(0);

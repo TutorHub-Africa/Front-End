@@ -8,7 +8,6 @@ const Filter_Component = ({
   selectedSubjects,
   setSelectedSubjects,
   selectedLanguages,
-  setSelectedLanguages,
   selectedPayTypes,
   setSelectedPayTypes,
   selectedRating,
@@ -16,7 +15,8 @@ const Filter_Component = ({
   }) => 
   {
     const [showMoreSubjects, setShowMoreSubjects] = useState(false);
-    const [showMoreLanguages, setShowMoreLanguages] = useState(false);
+    const [gradeLevel, setGradeLevel] = useState('');
+    const [durationPerDay, setDurationPerDay] = useState('');
 
     const fetchPossiblePrograms = () => {
       const requestOptions = {
@@ -46,18 +46,6 @@ const Filter_Component = ({
     }
 
 
-    const handleSelectLanguage = async(language, isChecked) => {
-      if(isChecked){
-        setSelectedLanguages(prev => [...prev, language])
-      }
-      else{
-        setSelectedLanguages(prev => prev.filter(item => item !== language))
-      }
-
-      fetchPossiblePrograms();
-    }
-
-
     const handleSelectPayType = async(pay_type, isChecked) => {
       if(isChecked){
         setSelectedPayTypes(prev => [...prev, pay_type])
@@ -81,9 +69,31 @@ const Filter_Component = ({
       fetchPossiblePrograms();
     }
 
+    const handleGradeLevelChange = (event) => {
+      setGradeLevel(event.target.value);
+    };
+    
+    const handleDurationPerDayChange = (event) => {
+        setDurationPerDay(event.target.value);
+    };
 
     return (
       <div className="filter-container">
+        <div className="filter-section">
+          <h3>Grade Level</h3>
+          <select className='filter-grade-and-hour' value={gradeLevel} onChange={handleGradeLevelChange}>
+            {Array.from({ length: 12 }, (_, i) => i + 1).map((grade) => (
+              <option key={grade} value={grade}>{grade}</option>
+            ))}
+          </select>
+        </div>
+
+        <div className='filter-section'>
+          <h3>Max Hours Per Day</h3>
+            <input className='filter-grade-and-hour' type="number" value={durationPerDay} onChange={handleDurationPerDayChange} min="0" />
+        </div>
+
+        
 
 
         <div className="filter-section">
@@ -103,26 +113,6 @@ const Filter_Component = ({
             {showMoreSubjects ? 'Show Less' : 'Show More'}
           </button>
         </div>
-
-
-        <div className="filter-section">
-          <h3>Language</h3>
-
-          {selectedLanguages.slice(0, showMoreLanguages ? selectedLanguages.length : 4).map(
-            (language, index) => (
-              <div className="filter-item" key={index}>
-                <input type="checkbox" id={language} name={language} onChange={(event) => handleSelectLanguage(language, event.target.checked)}/>
-                <label>{language}</label>
-              </div>
-              )
-            )
-          }
-
-          <button className="show-more-button" onClick={() => setShowMoreLanguages(!showMoreLanguages)}>
-            {showMoreLanguages ? 'Show Less' : 'Show More'}
-          </button>
-        </div>
-
 
         <div className="filter-section">
           <h3>Price</h3>

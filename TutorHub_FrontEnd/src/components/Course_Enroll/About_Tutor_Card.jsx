@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 
 function About_Tutor_Card({programId}){
-    const [aboutTutor, setAboutTutor] = useState("About Tutor");
+    const [aboutTutor, setAboutTutor] = useState("Sample Tutor Bio");
 
     // useEffect(() => {
     //     fetch(`API ENDPOINT TO GET COURSE INFO/${programId}`)

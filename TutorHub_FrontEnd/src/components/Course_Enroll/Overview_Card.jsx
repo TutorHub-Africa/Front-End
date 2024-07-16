@@ -1,7 +1,7 @@
 import {useState, useEffect} from 'react';
 
 function OverView_Card({programId}){
-    const [courseOverview, setCourseOverview] = useState("Course Overview");
+    const [courseOverview, setCourseOverview] = useState("Sample Course Overview");
 
     // useEffect(() => {
     //     fetch(`API ENDPOINT TO GET COURSE INFO/${programId}`)

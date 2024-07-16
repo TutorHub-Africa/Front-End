@@ -3,7 +3,7 @@ import { starIcon, blankStarIcon, quoteIcon } from "../../assets/assets.js";
 import {useState , useEffect} from "react";
 
 const Review_Card = ({reviewID}) => {
-    const [reviewName, setReviewName] = useState("Name");
+    const [reviewName, setReviewName] = useState("Sample Reviewer");
     const [reviewRating, setReviewRating] = useState(2);
     const [reviewText, setReviewText] = useState("This is a sample review ");
 

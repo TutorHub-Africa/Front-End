@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import { downloadIcon } from "../../assets/assets";
 
 function Resources({programId}){
-    const [textBooks, setTextBooks] = useState([]);
-    const [sampleExams, setSampleExams] = useState([]);
-    const [videoResources, setVideoResources] = useState([]);
+    const [textBooks, setTextBooks] = useState([{name: "Sample", url:'www.google.com'}]);
+    const [sampleExams, setSampleExams] = useState([{name: "Sample", url:'www.google.com'}]);
+    const [videoResources, setVideoResources] = useState([{name: "Sample", url:'www.google.com'}]);
 
     //   useEffect(() => {
     //     fetch(`API ENDPOINT TO GET COURSE INFO/${programId}`)
