@@ -20,16 +20,22 @@ function App() {
       <div className="app">
           <Router>
             <header>
-            <NavBar status={'loggedIn'}/>
+            <NavBar status={'loggedIn'} user={'student'}/>
+            {/* <NavBar status={'loggedIn'} user={'tutor'}/> */}
             </header>
             <div className="content">
               <Routes>
-                <Route path="/" element={<Student_Course_List/>} />
+                <Route path="/student" element={<Student_Course_List/>} />
                 <Route path="/student/dashboard" element={<Dashboard/>} />
-                <Route path="/tutor/dashboard" element={<Tutor_Dashboard/>} />
 
-                <Route path="/courses" element={<Course_Search_Main />} />
+                <Route path="/student/courses" element={<Course_Search_Main />} />
                 <Route path="/program_details" element={<Course_Description_Card />} />
+                
+                ////////////////////////////////////////////////////////
+
+                <Route path="/tutor" element={<Tutor_Course_List/>} />
+                <Route path="/tutor/dashboard" element={<Tutor_Dashboard/>} />
+                <Route path="/tutor/add_course" element={<Tutor_Course_Add />} />
 
                 <Route path="/about_us" element={<Tutor_Course_Add/>} />
               </Routes>
