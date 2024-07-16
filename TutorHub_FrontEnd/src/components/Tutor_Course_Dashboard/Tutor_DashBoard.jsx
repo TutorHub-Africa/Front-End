@@ -1,4 +1,6 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
+
 import '../../styles/Course_Dashboard/Tutor_Dashboard.css';
 import Course_Search_Head from '../Search_Courses/Course_Search_Head.jsx';
 
@@ -9,8 +11,10 @@ import See_Review from './See_Review.jsx';
 import Message from './Message.jsx';
 
 function Tutor_DashBoard(){
+    const location = useLocation();
+    const programId = location.state.programId;
+
     const [activeButton, setActiveButton] = useState('button1');
-    const [programId, setProgramId] = useState('');
 
     const handleClick = (buttonId) => {
       setActiveButton(buttonId);
@@ -54,7 +58,7 @@ function Tutor_DashBoard(){
                 className={`course-page-sidebar-item ${activeButton === "button5" ? "course-page-sidebar-item active" : ""}`}
                 onClick={() => handleClick("button5")}
                 >
-                Contact Tutor
+                Contact Students
             </button>
           </div>
   

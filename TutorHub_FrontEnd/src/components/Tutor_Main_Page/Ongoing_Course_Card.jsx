@@ -5,12 +5,12 @@ import "../../styles/Student_Course_List/Enrolled_Course_Card.css";
 import Star from "../../assets/star.png";
 import course_img_placeholder from "../../assets/error.png";
 
-function Enrolled_Course_Card({programId}){
+function Ongoing_Course_Card({programId}){
     const [courseImage, setCourseImage] = useState(course_img_placeholder);
     const [subject , setSubject] = useState("Subject");
     const [review , setReview] = useState(0.0);
     const [title , setTitle] = useState("Title");
-    const [tutorName, setTutorName] = useState("Tutor Name");
+    const [enrolled, setEnrolled] = useState("0");
 
   //   useEffect(() => {
   //     fetch(`API ENDPOINT TO GET COURSE INFO/${programId}`)
@@ -20,14 +20,14 @@ function Enrolled_Course_Card({programId}){
   //         setSubject(data.subject);
   //         setReview(data.review);
   //         setTitle(data.title);
-  //         setTutorName(data.tutorName);
+  //         setEnrolled(data.tutorName);
   //     });
   // }, [programId]);
 
     const navigate = useNavigate();
 
     function handleLearn(programId){
-      navigate('/student/dashboard', { state: { programId } });
+      navigate('/tutor/dashboard', { state: { programId } });
     };
 
     return (
@@ -50,7 +50,7 @@ function Enrolled_Course_Card({programId}){
           <div className="card-body">
             <span className="rating"></span>
             <h3 className="title">{title}</h3>
-            <p className="instructor">By {tutorName}</p>
+            <p className="instructor">Enrolled: {enrolled} Students</p>
           </div>
 
           <div className="card-footer">
@@ -58,10 +58,10 @@ function Enrolled_Course_Card({programId}){
                 className="learn-button" 
                 onClick={() => {handleLearn(programId)}}
                 >
-                Start Learning
+                Start Teaching
             </button>
           </div>
         </div>
       );
 }
-export default Enrolled_Course_Card;
+export default Ongoing_Course_Card;

@@ -9,6 +9,8 @@ import Course_Description_Card from "./components/Course_Enroll/Course_Descripti
 import Dashboard from "./components/Course_Dashboard/Dashboard.jsx";
 import Tutor_Dashboard from "./components/Tutor_Course_Dashboard/Tutor_DashBoard.jsx";
 import Student_Course_List from "./components/Student_Main_Page/Student_Course_List.jsx";
+import Tutor_Course_List from "./components/Tutor_Main_Page/Tutor_Course_List.jsx";
+import Tutor_Course_Add from "./components/Tutor_Course_Add/Tutor_Course_Add.jsx";
 
 function App() {
   return (
@@ -23,10 +25,13 @@ function App() {
             <div className="content">
               <Routes>
                 <Route path="/" element={<Student_Course_List/>} />
-                <Route path="/student_dashboard" element={<Dashboard/>} />
+                <Route path="/student/dashboard" element={<Dashboard/>} />
+                <Route path="/tutor/dashboard" element={<Tutor_Dashboard/>} />
+
                 <Route path="/courses" element={<Course_Search_Main />} />
                 <Route path="/program_details" element={<Course_Description_Card />} />
-                <Route path="/about_us" element={<Tutor_Dashboard/>} />
+
+                <Route path="/about_us" element={<Tutor_Course_Add/>} />
               </Routes>
             </div>
           </Router>
