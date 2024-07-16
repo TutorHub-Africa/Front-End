@@ -167,3 +167,12 @@ div .welcome{
     justify-content: center;
 }
 
+.signup-text-cont{
+    display: flex;
+    justify-content: center;
+}
+
+.signup-text-cont h2{
+    font-weight: 400;
+    font-size: 30px;
+}

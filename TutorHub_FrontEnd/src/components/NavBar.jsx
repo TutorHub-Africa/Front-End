@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import '../styles/header/Header.css';
 
 import {userIcon} from '../assets/assets.js'
@@ -14,6 +14,8 @@ function Header({status, user}){
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };
+
+    const navigate = useNavigate();
 
     return(
         <header className="header">
@@ -88,7 +90,12 @@ function Header({status, user}){
 
                 {status === "loggedOut" && 
                     <div className="login-button-container">
-                        <button className="login-button">Login</button>
+                        <button 
+                            className="login-button"
+                            onClick={() => {navigate('/login')}}
+                            >
+                                Login
+                        </button>
                     </div>
                 }
 
