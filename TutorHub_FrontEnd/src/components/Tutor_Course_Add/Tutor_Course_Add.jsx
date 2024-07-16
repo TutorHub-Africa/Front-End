@@ -36,8 +36,9 @@ function Tutor_Course_Add() {
                 {
                     headers: {
                         'Content-Type': 'application/json',
-                        Authorization:
-                            'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI2Njk0YzRiMGNhMmY3ZGY4MTQwZGFiZWQiLCJ1c2VyTmFtZSI6InR1dG9yMSIsImVtYWlsIjoidHV0b3IxQGdtYWlsLmNvbSIsImlhdCI6MTcyMTE1OTc0NywiZXhwIjoxNzIxMzMyNTQ3fQ.aRt4m6p0EQApkbeq397glbVQMQRjSxgWeuEuDyNhJZY',
+                        Authorization: `Bearer ${localStorage.getItem(
+                            'token'
+                        )}`,
                     },
                 }
             )
