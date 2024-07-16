@@ -41,45 +41,6 @@ function Course_Review({programId}){
                     <img src={buttonRight} onClick={handleRightClick} className='review-nav-but'/>
                 </div>
             </div>
-
-            <div className="submit-review-container">
-                <h2> Rate & Review</h2>
-                <div className="rate-stars">
-                    {[...Array(5)].map((star, index) => {
-                        const ratingValue = index + 1;
-
-                        return (
-                            <label key={index}>
-                                <input 
-                                    type="radio" 
-                                    name="rating" 
-                                    value={ratingValue} 
-                                    onClick={() => setRating(ratingValue)}
-                                    className="rating-radio"
-                                />
-                                <img 
-                                    src={ratingValue <= (hover || rating) ? rateStarFilled : rateStar} 
-                                    onMouseEnter={() => setHover(ratingValue)}
-                                    onMouseLeave={() => setHover(0)}
-                                    className="review-rate-star"
-                                />
-                            </label>
-                        );
-                    })}
-                </div>
-
-                <input 
-                    type="text" 
-                    placeholder="Write a review..."
-                    className="review-textfield"
-                    />
-                <div className="review-but-div">
-                    <button className="review-submit-but">
-                        Submit Review
-                    </button>
-                </div>
-            </div>
-
         </div>
 
     );

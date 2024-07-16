@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-
-import '../../styles/Course_Dashboard/Dashboard.css';
 import { starIcon, calendarIcon } from '../../assets/assets';
 
 function Greeting({programId , programName}){

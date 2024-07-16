@@ -4,10 +4,16 @@ import { useState } from 'react';
 import { linkedinIcon, emailIcon, telegramIcon } from "../../assets/assets";
 
 function Contact_Tutor(){
-    const [message, setMessage] = useState('');
+    const [students, setStudents] = useState([{name:'eba', id:1}]);
+    const [selectedStudent, setSelectedStudent] = useState('');
+    const [messages, setMessages] = useState([ {id: 1, text: 'Hello, this is Student 1', studentId: 1}]);
+    const [newMessage, setNewMessage] = useState('');const [message, setMessage] = useState('');
 
     const handleSendMessage = async () => {
-        try {
+        try {const [students, setStudents] = useState([]);
+            const [selectedStudent, setSelectedStudent] = useState('');
+            const [messages, setMessages] = useState([]);
+            const [newMessage, setNewMessage] = useState('');
             const response = await axios.post('API', { message });
             console.log(response.data);
         } catch (error) {
@@ -19,6 +25,17 @@ function Contact_Tutor(){
         <div className="course-page-main-content">
             <div className="send-message-container">
                 <h2> Contact Tutor </h2>
+                <select className='select-course' value={selectedStudent} onChange={(e) => setSelectedStudent(e.target.value)}>
+                    <option value="">Select a student</option>
+                    {students.map((student, index) => (
+                        <option key={index} value={student.id}>{student.name}</option>
+                    ))}
+                </select>
+                <ul>
+                    {messages.filter(message => message.studentId === selectedStudent).map((message, index) => (
+                        <li key={index}>{message.text}</li>
+                    ))}
+                </ul>
                 <textarea
                     type="text" 
                     placeholder="Write message..."
@@ -30,39 +47,6 @@ function Contact_Tutor(){
                     <button className="review-submit-but" onClick={handleSendMessage}>
                         Send Message
                     </button>
-                </div>
-            </div>
-
-            <div className="send-message-container">
-                <h2> Contact Info </h2>
-                <div className="socials-container">
-
-                    <div className="socials-items">
-                        <div className="socials-items-img-cont">
-                            <img src={emailIcon}/>
-                        </div>   
-                        <div>
-                            <p>abebekebede@gmail.com</p>
-                        </div>
-                    </div>
-
-                    <div className="socials-items">
-                        <div className="socials-items-img-cont">
-                            <img src={telegramIcon}/>
-                        </div>   
-                        <div>
-                            <p>@heheh</p>
-                        </div>
-                    </div>
-
-                    <div className="socials-items">
-                        <div className="socials-items-img-cont">
-                            <img src={linkedinIcon}/>
-                        </div>   
-                        <div>
-                            <p>linkedin.com</p>
-                        </div>
-                    </div>                 
                 </div>
             </div>
         </div>
