@@ -1,10 +1,18 @@
+import { Link } from 'react-router-dom';
+
 import { useState } from 'react';
 import '../../styles/Login_Signup.css'
 import { googleIcon } from '../../assets/assets.js';
 
 export const Login = () => {
+    const [userType, setUserType] = useState('');
+
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    const handleUserTypeChange = (event) => {
+        setUserType(event.target.value);
+    };
 
     const handleSignIn = async () => {
         try {
@@ -60,18 +68,39 @@ export const Login = () => {
                     </div>
                 </div>
                 <div className="remember">
+                    <div className='user-type'>
+                        <label>
+                            <input
+                                type="radio"
+                                value="student"
+                                checked={userType === 'student'}
+                                onChange={handleUserTypeChange}
+                            />
+                            Student
+                        </label>
+                        <label>
+                            <input
+                                type="radio"
+                                value="tutor"
+                                checked={userType === 'tutor'}
+                                onChange={handleUserTypeChange}
+                            />
+                            Tutor
+                        </label>
+                    </div>
                     <a href="#" className="forgot">Forgot Password?</a>
+
                 </div>
+                
                 <div className="signup">
 
                 <button className="signin" onClick={handleSignIn}>Sign In</button>
                     <div className='new-class'>
                         <p>Don't have an account? &nbsp; </p>
-                        <a href="#">Sign Up</a>
+                        <Link to="/signup">Sign Up</Link>
                     </div>
                 </div>
             </div>
-
         </div>
     )
 }
