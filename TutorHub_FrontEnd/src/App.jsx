@@ -38,7 +38,7 @@ function App() {
                 <Route path="/tutor/dashboard" element={<Tutor_Dashboard/>} />
                 <Route path="/tutor/add_course" element={<Tutor_Course_Add />} />
 
-                <Route path="/student/about_us" element={<Login/>} />
+                <Route path="/login" element={<Login/>} />
               </Routes>
             </div>
           </Router>

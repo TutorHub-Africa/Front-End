@@ -1,7 +1,8 @@
 .login_container{
     width: 100%;
     background-color: #fff;
-    margin-top: 30vh;
+    margin-top: 27vh;
+    margin-bottom: 50px;
 }
 
 .login_container p{
@@ -124,7 +125,8 @@ div .welcome{
 .remember{
     display: flex;
     margin-top: 10px;
-    justify-content: right;
+    justify-content: space-between;
+    align-items: center;
     
 }
 .forgot{
@@ -154,3 +156,14 @@ div .welcome{
     justify-content: center;    
     align-items: center;
 }
+
+.new-class p{
+    font-weight: 200;
+}
+
+.user-type{
+    display: flex;
+    margin: 10px;
+    justify-content: center;
+}
+
