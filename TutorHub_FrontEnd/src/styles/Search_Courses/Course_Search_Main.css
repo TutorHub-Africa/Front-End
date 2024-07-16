@@ -7,16 +7,17 @@
     flex-direction: row;
     justify-content: space-between;
     align-items: flex-start;
-    margin-top: 30px;
-    padding-right: 20px;
+    margin-top: 30px;    
 }
 
+.search-section{
+    margin-left: -15px;
+}
 .program-list{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; 
-    width: 930px;
-
+    width: 100%;
 }
 
 .filter-card{

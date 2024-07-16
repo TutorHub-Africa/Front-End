@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import "../../styles/Search_Courses/Course_Card.css";
+import "../../styles/Student_Course_List/Enrolled_Course_Card.css";
 
 import Star from "../../assets/star.png";
 import course_img_placeholder from "../../assets/error.png";
 
-function Course_Card({programId}){
+function Enrolled_Course_Card({programId}){
     const [courseImage, setCourseImage] = useState(course_img_placeholder);
     const [subject , setSubject] = useState("Subject");
     const [review , setReview] = useState(0.0);
     const [title , setTitle] = useState("Title");
     const [tutorName, setTutorName] = useState("Tutor Name");
-    const [price, setPrice] = useState(0.0);
 
   //   useEffect(() => {
   //     fetch(`API ENDPOINT TO GET COURSE INFO/${programId}`)
@@ -22,14 +21,13 @@ function Course_Card({programId}){
   //         setReview(data.review);
   //         setTitle(data.title);
   //         setTutorName(data.tutorName);
-  //         setPrice(data.price);
   //     });
   // }, [programId]);
 
     const navigate = useNavigate();
 
-    function handleEnroll(){
-      navigate('/program_details', { state: { programId } });
+    function handleLearn(programId){
+      navigate('/student_dashboard', { state: { programId } });
     };
 
     return (
@@ -57,15 +55,13 @@ function Course_Card({programId}){
 
           <div className="card-footer">
             <button 
-                className="enroll-button" 
-                onClick={() => {handleEnroll()}}
+                className="learn-button" 
+                onClick={() => {handleLearn(programId)}}
                 >
-                Enroll Now
+                Start Learning
             </button>
-            <span className="price">${price}</span>
           </div>
         </div>
       );
-
 }
-export default Course_Card;
+export default Enrolled_Course_Card;

@@ -1,3 +1,5 @@
+export { default as userIcon} from './userIcon.svg'
+
 export { default as twitterIcon } from './TwitterDark.png';
 export { default as whatsappIcon } from './WhatsUpDark.png';
 export { default as youtubeIcon } from './youtubeDark.png';
