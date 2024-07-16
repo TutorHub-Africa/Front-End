@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -9,8 +10,14 @@ import Course_Description_Card from "./components/Course_Enroll/Course_Descripti
 import Dashboard from "./components/Course_Dashboard/Dashboard.jsx";
 import Tutor_Dashboard from "./components/Tutor_Course_Dashboard/Tutor_DashBoard.jsx";
 import Student_Course_List from "./components/Student_Main_Page/Student_Course_List.jsx";
+import Tutor_Course_List from "./components/Tutor_Main_Page/Tutor_Course_List.jsx";
+import Tutor_Course_Add from "./components/Tutor_Course_Add/Tutor_Course_Add.jsx";
+import Login from "./components/Login_Signup/Login.jsx";
+import Signup from "./components/Login_Signup/Signup.jsx";
 
 function App() {
+  const [loginStatus, setLoginStatus] = useState('loggedOut')
+
   return (
     <>
       {/* <Course_Description_Card/> */}
@@ -18,15 +25,25 @@ function App() {
       <div className="app">
           <Router>
             <header>
-            <NavBar status={'loggedIn'}/>
+            <NavBar status={loginStatus} user={'student'}/>
             </header>
             <div className="content">
               <Routes>
-                <Route path="/" element={<Student_Course_List/>} />
-                <Route path="/student_dashboard" element={<Dashboard/>} />
-                <Route path="/courses" element={<Course_Search_Main />} />
+                <Route path="/student" element={<Student_Course_List/>} />
+                <Route path="/student/dashboard" element={<Dashboard/>} />
+
+                <Route path="/student/courses" element={<Course_Search_Main />} />
                 <Route path="/program_details" element={<Course_Description_Card />} />
-                {/* <Route path="/courses" element={<Tutor_Dashboard/>} /> */}
+                
+                ////////////////////////////////////////////////////////
+
+                <Route path="/tutor" element={<Tutor_Course_List/>} />
+                <Route path="/tutor/dashboard" element={<Tutor_Dashboard/>} />
+                <Route path="/tutor/add_course" element={<Tutor_Course_Add />} />
+
+                <Route path="/login" element={<Login/>} />
+                <Route path="/signup" element={<Signup/>} />
+
               </Routes>
             </div>
           </Router>

@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import { starIcon, calendarIcon } from '../../assets/assets';
 
-function Greeting({programId , programName}){
+function Greeting({programId}){
+    const [programName, setProgramName] = useState("Program Name");
+    const [enrolled, setEnrolled] = useState(0);
+
     const [title , setTitle] = useState("Title");
     const [rating, setRating] = useState(0);
 
@@ -13,6 +16,8 @@ function Greeting({programId , programName}){
     //         setRating(data.rating);
     //         setTitle(data.title);
     //         setTutorName(data.tutorName);
+    //         setProgramName(data.programName); 
+    //         setEnrolled(data.enrolled   
     //     });
     // }, [programId]);
 
@@ -22,6 +27,7 @@ function Greeting({programId , programName}){
             <div className="greeting-program-info">
             <div className='greeting-text'>
                 <h2>{programName}</h2>
+                <h3>Enrolled: {enrolled} Students</h3>
                 <div className="greeting-program-rating">
                     <span><img src={starIcon}/>{rating}</span>
                 </div>

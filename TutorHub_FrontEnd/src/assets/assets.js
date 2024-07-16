@@ -1,4 +1,5 @@
 export { default as userIcon} from './userIcon.svg'
+export {default as googleIcon} from './googleIcon.png'
 
 export { default as twitterIcon } from './TwitterDark.png';
 export { default as whatsappIcon } from './WhatsUpDark.png';
