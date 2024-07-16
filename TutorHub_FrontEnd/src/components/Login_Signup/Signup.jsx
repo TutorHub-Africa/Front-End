@@ -34,7 +34,7 @@ export const Signup = () => {
             console.error(error);
         }
     };
-    
+
     const handleGoogleSignIn = () => {
         console.log('abcd')
     }
@@ -53,7 +53,7 @@ export const Signup = () => {
                         <input 
                             type="firstName" 
                             placeholder='First Name' 
-                            value={email}
+                            value={firstName}
                             onChange={(e) => setFirstName(e.target.value)}
                         />
                         </div>
@@ -64,7 +64,7 @@ export const Signup = () => {
                         <input 
                             type="LastName" 
                             placeholder='Last Name' 
-                            value={email}
+                            value={lastName}
                             onChange={(e) => setLastName(e.target.value)}
                         />
                         </div>
@@ -75,7 +75,7 @@ export const Signup = () => {
                         <input 
                             type="userName" 
                             placeholder='User Name' 
-                            value={email}
+                            value={userName}
                             onChange={(e) => setUserName(e.target.value)}
                         />
                         </div>
