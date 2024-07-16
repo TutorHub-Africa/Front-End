@@ -129,7 +129,7 @@ const Filter_Component = ({
           <input
             type="radio"
             id="5_star"
-            name="5_star"
+            name="star"
             onChange={(event) => handleSelectRating(5, event.target.checked)}
           />
           <img src={star} alt="star" className="star-icon" />
@@ -143,7 +143,7 @@ const Filter_Component = ({
           <input
             type="radio"
             id="4_star"
-            name="4_star"
+            name="star"
             onChange={(event) => handleSelectRating(4, event.target.checked)}
           />
           <img src={star} alt="star" className="star-icon" />
@@ -156,7 +156,7 @@ const Filter_Component = ({
           <input
             type="radio"
             id="3_star"
-            name="3_star"
+            name="star"
             onChange={(event) => handleSelectRating(3, event.target.checked)}
           />
           <img src={star} alt="star" className="star-icon" />
@@ -168,7 +168,7 @@ const Filter_Component = ({
           <input
             type="radio"
             id="2_star"
-            name="2_star"
+            name="star"
             onChange={(event) => handleSelectRating(2, event.target.checked)}
           />
           <img src={star} alt="star" className="star-icon" />
@@ -179,7 +179,7 @@ const Filter_Component = ({
           <input
             type="radio"
             id="1_star"
-            name="1_star"
+            name="star"
             onChange={(event) => handleSelectRating(1, event.target.checked)}
           />
           <img src={star} alt="star" className="star-icon" />

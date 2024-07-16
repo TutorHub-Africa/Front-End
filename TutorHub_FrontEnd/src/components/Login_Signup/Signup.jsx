@@ -34,10 +34,6 @@ export const Signup = () => {
             console.error(error);
         }
     };
-    
-    const handleGoogleSignIn = () => {
-        console.log('abcd')
-    }
 
     return (
         <div className="login_container">
