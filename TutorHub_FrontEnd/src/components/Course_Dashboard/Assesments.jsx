@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { linkIcon } from "../../assets/assets";
 
 function Assesments(){
-    const [exams, setExams] = useState([]);
-    const [assignments, setAssignments] = useState([]);
+    const [exams, setExams] = useState([{name: "Sample", url:'www.google.com'}]);
+    const [assignments, setAssignments] = useState([{name: "Sample", url:'www.google.com'}]);
 
     //   useEffect(() => {
     //     fetch(`API ENDPOINT TO GET COURSE INFO/${programId}`)

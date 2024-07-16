@@ -143,20 +143,20 @@
     background-color: #746dff;
 }
 
-.review-div{
+.rating-div{
   margin-left: -180px;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.review-nav-buttons{
-  width: 13%;
+.rating-nav-buttons{
+  width: 10%;
   display: flex;
   justify-content: space-between;
 }
 
-.review-nav-but{
+.rating-nav-but{
   cursor: pointer;
 }
 

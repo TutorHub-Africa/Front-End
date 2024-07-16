@@ -5,6 +5,15 @@
     background-color: #f8f8f8;
     border-radius: 8px;
   }
+
+  .filter-grade-and-hour {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
   
 .filter-section h3 {
     margin-top: 0px;
