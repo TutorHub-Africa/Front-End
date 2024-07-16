@@ -1,4 +1,5 @@
 import React from "react";
+import { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
@@ -12,8 +13,11 @@ import Student_Course_List from "./components/Student_Main_Page/Student_Course_L
 import Tutor_Course_List from "./components/Tutor_Main_Page/Tutor_Course_List.jsx";
 import Tutor_Course_Add from "./components/Tutor_Course_Add/Tutor_Course_Add.jsx";
 import Login from "./components/Login_Signup/Login.jsx";
+import Signup from "./components/Login_Signup/Signup.jsx";
 
 function App() {
+  const [loginStatus, setLoginStatus] = useState('loggedOut')
+
   return (
     <>
       {/* <Course_Description_Card/> */}
@@ -21,8 +25,7 @@ function App() {
       <div className="app">
           <Router>
             <header>
-            <NavBar status={'loggedIn'} user={'student'}/>
-            {/* <NavBar status={'loggedIn'} user={'tutor'}/> */}
+            <NavBar status={loginStatus} user={'student'}/>
             </header>
             <div className="content">
               <Routes>
@@ -39,6 +42,8 @@ function App() {
                 <Route path="/tutor/add_course" element={<Tutor_Course_Add />} />
 
                 <Route path="/login" element={<Login/>} />
+                <Route path="/signup" element={<Signup/>} />
+
               </Routes>
             </div>
           </Router>
