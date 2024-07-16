@@ -16,7 +16,7 @@ const Filter_Component = ({
   {
     const [showMoreSubjects, setShowMoreSubjects] = useState(false);
     const [gradeLevel, setGradeLevel] = useState('');
-    const [durationPerDay, setDurationPerDay] = useState('');
+    const [durationPerDay, setDurationPerDay] = useState('24');
 
     const fetchPossiblePrograms = () => {
       const requestOptions = {
@@ -92,9 +92,6 @@ const Filter_Component = ({
           <h3>Max Hours Per Day</h3>
             <input className='filter-grade-and-hour' type="number" value={durationPerDay} onChange={handleDurationPerDayChange} min="0" />
         </div>
-
-        
-
 
         <div className="filter-section">
           <h3>Subject</h3>

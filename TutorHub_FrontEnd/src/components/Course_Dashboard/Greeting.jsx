@@ -21,7 +21,7 @@ function Greeting({programId}){
 
     return(
         <div className="course-page-main-content">
-            <h1>Hello, Hermon</h1>
+            <h1>Hello, [SAMPLE]</h1>
             <div className="greeting-program-info">
             <div className='greeting-text'>
                 <h2>{title}</h2>

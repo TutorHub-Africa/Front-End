@@ -116,6 +116,12 @@
     color: #161439;
     font-weight: 400;
   }
+  .greeting-program-info h3{
+    color: #161439;
+    font-size: medium;
+    font-weight: 400;
+  }
+  
 /* END OF GREETING */
 
 /* START OF RESOURCES AND ASSESMENTS */
@@ -266,21 +272,66 @@ ul{
 .send-message-container{
     border-bottom: 1px solid #ddd;
 }
+
+.single-message-container{
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin: 15px;
+
+}
+
 .send-message-container h2{
-    font-weight: 200;
+    font-weight: 500;
     color: #373642;
   }
 
-.socials-items{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
+  .send-message-container h3{
+    font-weight: 300;
+    color: #373642;
+  }
+
+  .send-message-container p{
+    font-weight: 200;    
+  }
+
+  .send-message-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 13px;
+    margin-bottom: 10px;
 }
 
-.socials-items-img-cont{
-    height: 40px;
-    width: 40px;
-    border-right: 1px solid #ddd;
-    margin: 8px;
+.send-message-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #49a1ff;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
 }
+
+.send-message-container button:hover {
+    background-color: #0056b3;
+}
+
+.student-select {
+  width: 80%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+.send-but-div{
+  width: 100%;
+  display: flex;
+  justify-content: right;
+}
+
 /* END OF CONTACT TUTOR */

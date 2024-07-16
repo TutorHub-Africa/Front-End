@@ -11,20 +11,9 @@ import Message from './Message.jsx';
 function Tutor_DashBoard(){
     const [activeButton, setActiveButton] = useState('button1');
     const [programId, setProgramId] = useState('');
-    const [selectedProgramName, setSelectedProgramName] = useState('NOT SELECTED');
-
-    const courses = [
-        { id: '1', name: 'Course 1' },
-        { id: '2', name: 'Course 2' },
-    ];
 
     const handleClick = (buttonId) => {
       setActiveButton(buttonId);
-    }
-
-    const handleCourseChange = (event) => {
-        setProgramId(event.target.value); 
-        setSelectedProgramName(courses.find(course => course.id === event.target.value).name);
     }
   
     return (
@@ -32,14 +21,6 @@ function Tutor_DashBoard(){
         <Course_Search_Head/>
         <div className="course-page-dashboard">
           <div className="course-page-sidebar">
-            <select className='select-course' value={programId} onChange={handleCourseChange}> {/* Add this block */}
-                <option value="">Select a course</option>
-                {courses.map((course) => (
-                    <option key={course.id} value={course.id}>
-                        {course.name}
-                    </option>
-                ))}
-            </select>
             <button 
               id='button1'
               className={`course-page-sidebar-item ${activeButton === "button1" ? "course-page-sidebar-item active" : ""}`}
@@ -77,10 +58,7 @@ function Tutor_DashBoard(){
             </button>
           </div>
   
-          {activeButton === "button1" &&(
-            programId?  <Tutor_Greeting programId={programId} programName={selectedProgramName}/>
-            : <h1>SELECT A COURSE</h1>
-          )}
+          {activeButton === "button1" && <Tutor_Greeting programId={programId}/>}
           {activeButton === "button2" && <Post_Resources programId={programId}/>}
           {activeButton === "button3" && <Post_Assesments programId={programId}/>}
           {activeButton === "button4" && <See_Review programId={programId}/>}

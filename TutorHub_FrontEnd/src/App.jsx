@@ -26,7 +26,7 @@ function App() {
                 <Route path="/student_dashboard" element={<Dashboard/>} />
                 <Route path="/courses" element={<Course_Search_Main />} />
                 <Route path="/program_details" element={<Course_Description_Card />} />
-                {/* <Route path="/courses" element={<Tutor_Dashboard/>} /> */}
+                <Route path="/about_us" element={<Tutor_Dashboard/>} />
               </Routes>
             </div>
           </Router>

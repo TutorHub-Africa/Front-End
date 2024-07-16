@@ -26,7 +26,7 @@ function Contact_Tutor(){
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     />
-                <div className="review-but-div">
+                <div className="send-but-div">
                     <button className="review-submit-but" onClick={handleSendMessage}>
                         Send Message
                     </button>
