@@ -225,6 +225,12 @@ ul{
     color: #373642;
   }
 
+  .send-but-div{
+    width: 100%;
+    display: flex;
+    justify-content: right;
+  }
+
 .socials-items{
     display: flex;
     flex-direction: row;

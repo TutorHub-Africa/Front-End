@@ -59,7 +59,7 @@ function Resources({programId}){
                 <h2>TextBooks</h2>
                 <input className='resource-input' type="text" value={newTextBook.name} onChange={handleTextBookNameChange} placeholder="Resource name" />
                 <input className='resource-input' type="text" value={newTextBook.url} onChange={handleTextBookUrlChange} placeholder="Resource URL" />
-                <button className='resource-button' onClick={handleTextBookShare}>Share</button>
+                <button className='resource-button' onClick={handleTextBookShare}>Add</button>
                 <ul>
                     {textBooks.map((textBook, index) => (
                         <li key={index}>
