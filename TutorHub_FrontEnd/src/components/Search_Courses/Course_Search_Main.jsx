@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+
+import axios from 'axios';
 
 import '../../styles/Search_Courses/Course_Search_Main.css';
 
@@ -7,80 +9,96 @@ import Filter_Component from './Filter_Component';
 import Course_Search_Head from './Course_Search_Head';
 import Search_Bar from './Search_Bar';
 
-function Course_Search_Main(){
-    const [selectedPrograms, setSelectedPrograms] = useState([1,3,4,5,6,7]);
+const baseUrl = 'http://localhost:3000/course/filter?';
 
-    const [selectedSubjects, setSelectedSubjects] = useState([]);
-    const [selectedLanguages, setSelectedLanguages] = useState([]);
-    const [selectedPayTypes, setSelectedPayTypes] = useState(['paid']);
-    const [selectedRating, setSelectedRating] = useState([]);
+function Course_Search_Main() {
+  const [selectedPrograms, setSelectedPrograms] = useState([1, 3, 4, 5, 6, 7]);
 
-    /*
-    const selectedSubjects = [
-      { name: 'English'},
-    ];
+  const [selectedSubjects, setSelectedSubjects] = useState([]);
+  const [selectedLanguages, setSelectedLanguages] = useState([]);
 
-    const selectedLanguages = ['Amharic', 'English'];
-    */
+  const [selectedRatingChange, setSelectedRatingChange] = useState();
+  const [durationPerDayChange, setDurationPerDayChange] = useState();
+  const [gradeLevelChange, setGradeLevelChange] = useState(1);
+  const [searchResults, setSearchResults] = useState([]);
+  const [searchTitle, setSearchTitle] = useState('');
 
-    /*
-    useEffect(() => {
-      fetch('API END-POINT TO GET LIST OF SUBJECTS')
-        .then(response => response.json())
-        .then(data => setSubjects(data));
-    }, []); 
-    useEffect(() => {
-      fetch('API END-POINT TO GET LIST OF LANGUAGES')
-        .then(response => response.json())
-        .then(data => setLanguages(data));
-    }, []);
-    */
+  const fetchCourses = async () => {
+    try {
+      let url = baseUrl;
+      if (searchTitle != '') {
+        url = baseUrl + `title=${searchTitle}`;
+      }
 
+      if (gradeLevelChange != 1) {
+        url += `&grade=${gradeLevelChange}`;
+      }
 
-    return(
-        <>
-        <div className='total-container'>
-        <Course_Search_Head/>
+      if (durationPerDayChange) {
+        url += `&durationPerDay=${durationPerDayChange}`;
+      }
 
-        <div className='course-search-body'>
-            <div className='filter-card'>
-                <Filter_Component
-                    setSelectedPrograms = {setSelectedPrograms}
-                    selectedSubjects = {selectedSubjects}
-                    setSelectedSubjects = {setSelectedSubjects}
-                    selectedLanguages = {selectedLanguages}
-                    setSelectedLanguages = {setSelectedLanguages}
-                    selectedPayTypes = {selectedPayTypes}
-                    setSelectedPayTypes = {setSelectedPayTypes}
-                    selectedRating = {selectedRating}
-                    setSelectedRating = {setSelectedRating}
-                />
+      if (selectedRatingChange) {
+        url += `&rate=${selectedRatingChange}`;
+      }
+
+      console.log(url);
+
+      const response = await axios.get(url, {});
+
+      const mappedData = response.data.map((course) => ({
+        programId: course._id,
+        subject: course.subject,
+        title: course.title,
+        review: course.rate,
+        tutorName: course.tutorName,
+        price: course.fee,
+      }));
+
+      setSearchResults(mappedData);
+    } catch (error) {
+      console.error('Failed to fetch courses:', error);
+    }
+  };
+
+  useEffect(() => {
+    fetchCourses();
+  }, [
+    searchTitle,
+    gradeLevelChange,
+    durationPerDayChange,
+    selectedRatingChange,
+  ]);
+
+  return (
+    <>
+      <div className="total-container">
+        <Course_Search_Head />
+
+        <div className="course-search-body">
+          <div className="filter-card">
+            <Filter_Component
+              setSelectedRatingChange={setSelectedRatingChange}
+              setDurationPerDayChange={setDurationPerDayChange}
+              setGradeLevelChange={setGradeLevelChange}
+            />
+          </div>
+
+          <div className="search-section">
+            <Search_Bar setSearchTitle={setSearchTitle} />
+
+            <div className="program-list">
+              {searchResults.map((course, index) => (
+                <div className="course-card" key={index}>
+                  <Course_Card programId={course} />
+                </div>
+              ))}
             </div>
-
-            <div className='search-section'>
-                <Search_Bar
-                    setSelectedPrograms = {setSelectedPrograms}
-                    selectedSubjects = {selectedSubjects}
-                    selectedLanguages = {selectedLanguages}
-                    selectedPayTypes = {selectedPayTypes}
-                    selectedRating = {selectedRating}
-                />
-
-                <div className="program-list">
-                    {selectedPrograms.map((program_id, index) => (
-                        <div className='course-card' key={index} >
-                            <Course_Card
-                                programId={program_id}
-                            />
-                        </div>
-                    ))}
-                </div> 
-            </div>
+          </div>
         </div>
-        </div>
-        </>
-
-    );
+      </div>
+    </>
+  );
 }
 
 export default Course_Search_Main;
