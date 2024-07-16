@@ -69,9 +69,9 @@ function Course_Search_Main(){
                 <div className="program-list">
                     {selectedPrograms.map((program_id, index) => (
                         <div className='course-card' key={index} >
-                        <Course_Card
-                            programId={program_id}
-                        />
+                            <Course_Card
+                                programId={program_id}
+                            />
                         </div>
                     ))}
                 </div> 

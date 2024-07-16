@@ -23,6 +23,7 @@ function Course_Review({programId}){
     const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
     const handleLeftClick = () => {
+        console.log(programId);
         setCurrentReviewIndex(oldIndex => oldIndex > 0 ? oldIndex - 1 : reviewId.length - 1);
     }
     

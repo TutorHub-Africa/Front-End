@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import '../../styles/Course_Dashboard/Dashboard.css';
 import Course_Search_Head from '../Search_Courses/Course_Search_Head.jsx';
 
@@ -8,9 +9,12 @@ import Assesments from './Assesments.jsx';
 import Course_Review from './Course_Review.jsx';
 import Contact_Tutor from './Contact_Tutor.jsx';
 
-function Dashboard({programId}){
+function Dashboard(){
+  const location = useLocation();
+  const programId = location.state.programId;
+  
   const [activeButton, setActiveButton] = useState('button1');
-
+  
   const handleClick = (buttonId) => {
     setActiveButton(buttonId);
   }

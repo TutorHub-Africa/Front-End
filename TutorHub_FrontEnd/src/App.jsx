@@ -8,6 +8,7 @@ import Course_Search_Main from "./components/Search_Courses/Course_Search_Main.j
 import Course_Description_Card from "./components/Course_Enroll/Course_Description_Card.jsx";
 import Dashboard from "./components/Course_Dashboard/Dashboard.jsx";
 import Tutor_Dashboard from "./components/Tutor_Course_Dashboard/Tutor_DashBoard.jsx";
+import Student_Course_List from "./components/Student_Main_Page/Student_Course_List.jsx";
 
 function App() {
   return (
@@ -17,13 +18,15 @@ function App() {
       <div className="app">
           <Router>
             <header>
-            <NavBar />
+            <NavBar status={'loggedIn'}/>
             </header>
             <div className="content">
               <Routes>
-                {/* <Route path="/courses" element={<Course_Search_Main />} /> */}
-                {/* <Route path="/courses" element={<Dashboard/>} /> */}
-                <Route path="/courses" element={<Tutor_Dashboard/>} />
+                <Route path="/" element={<Student_Course_List/>} />
+                <Route path="/student_dashboard" element={<Dashboard/>} />
+                <Route path="/courses" element={<Course_Search_Main />} />
+                <Route path="/program_details" element={<Course_Description_Card />} />
+                {/* <Route path="/courses" element={<Tutor_Dashboard/>} /> */}
               </Routes>
             </div>
           </Router>

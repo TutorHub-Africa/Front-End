@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
 import "../../styles/Course_Enroll/Course_Description_Card.css";
 
 import {buttonLeft, buttonRight} from '../../assets/assets.js'
@@ -13,7 +14,10 @@ import Payment_Card from './Payment_Card.jsx';
 import Details_Card from './Details_Card.jsx';
 import Course_Search_Head from '../Search_Courses/Course_Search_Head.jsx';
 
-function Course_Description_Card({programId}){
+function Course_Description_Card(){
+    const location = useLocation();
+    const programId = location.state.programId;
+
     const [activeButton, setActiveButton] = useState('button1');
     const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
 
