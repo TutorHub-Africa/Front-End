@@ -66,8 +66,14 @@ function App() {
               {userType === 'tutor' && (
                 <Route path="/tutor/profile" element={<Tutor_Profile />} />
               )}
-              <Route path="/login" element={<Login setUserType={setUserType} />} />
-              <Route path="/signup" element={<Signup setUserType={setUserType}/>} />
+              <Route
+                path="/login"
+                element={<Login setUserType={(userType, setUserType)} />}
+              />
+              <Route
+                path="/signup"
+                element={<Signup setUserType={(userType, setUserType)} />}
+              />
             </Routes>
           </div>
         </Router>

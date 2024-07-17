@@ -5,9 +5,8 @@ import '../../styles/Login_Signup.css';
 import { googleIcon } from '../../assets/assets.js';
 import axios from 'axios';
 
-export const Signup = () => {
+export const Signup = ({ userType, setUserType }) => {
   const navigate_to = useNavigate();
-  const [userType, setUserType] = useState('');
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,7 +18,7 @@ export const Signup = () => {
     setUserType(event.target.value);
   };
 
-  const handleSignUp = async ({setUserType}) => {
+  const handleSignUp = async (setUserType) => {
     console.log({ email, password, firstName, lastName, userName });
     try {
       const response = await axios.post(
