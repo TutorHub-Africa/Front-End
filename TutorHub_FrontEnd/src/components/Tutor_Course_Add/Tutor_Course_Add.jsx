@@ -2,8 +2,10 @@ import { useState } from 'react'
 import '../../styles/Tutor_Course_Add/Tutor_Course_Add.css'
 import { upload } from '../../assets/assets'
 import axios from 'axios'
+import { useNavigate } from 'react-router-dom'
 
 function Tutor_Course_Add() {
+    const navigate_to = useNavigate();
     const [title, setTitle] = useState('')
     const [gradeLevel, setGradeLevel] = useState('')
     const [subject, setSubject] = useState('')
@@ -58,6 +60,7 @@ function Tutor_Course_Add() {
         } catch (error) {
             console.error(error, error.message)
         }
+        navigate_to('/tutor');
     }
 
     return (
