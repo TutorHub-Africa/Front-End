@@ -1,27 +1,41 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'
 
-import { useState } from 'react';
+import { useState } from 'react'
 import '../../styles/Login_Signup.css'
-import { googleIcon } from '../../assets/assets.js';
+import { googleIcon } from '../../assets/assets.js'
+import axios from 'axios'
 
 export const Login = () => {
-    const [userType, setUserType] = useState('');
+    const [userType, setUserType] = useState('')
 
-    const [email, setEmail] = useState('');
-    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
 
     const handleUserTypeChange = (event) => {
-        setUserType(event.target.value);
-    };
+        setUserType(event.target.value)
+    }
 
     const handleSignIn = async () => {
         try {
-            const response = await axios.post('API ENDPOINT', { email, password });
-            console.log(response.data);
+            const response = await axios.post(
+                `http://localhost:3000/${userType}/login`,
+                {
+                    email,
+                    password,
+                }
+            )
+            if (userType === 'students') {
+                localStorage.setItem('token', response.data.studentToken)
+                localStorage.setItem('userType', 'student')
+            } else if (userType === 'tutor') {
+                localStorage.setItem('token', response.data.tutorToken)
+                localStorage.setItem('userType', 'tutor')
+            }
+            console.log(response.data)
         } catch (error) {
-            console.error(error);
+            console.error(error)
         }
-    };
+    }
 
     const handleGoogleSignIn = () => {
         console.log('abcd')
@@ -29,17 +43,24 @@ export const Login = () => {
 
     return (
         <div className="login_container">
-            <div className="middle">                
-                <div className='continue-with'>
-                    <button className='google-button' onClick={handleGoogleSignIn}>
-                        <div className='icon-container'>
-                        <img className='google-icon' src={googleIcon} alt='google'/>
+            <div className="middle">
+                <div className="continue-with">
+                    <button
+                        className="google-button"
+                        onClick={handleGoogleSignIn}
+                    >
+                        <div className="icon-container">
+                            <img
+                                className="google-icon"
+                                src={googleIcon}
+                                alt="google"
+                            />
                         </div>
                         Continue with Google
                     </button>
                 </div>
 
-                <div className='or'>
+                <div className="or">
                     <div></div>
                     <p>or</p>
                     <div></div>
@@ -48,32 +69,32 @@ export const Login = () => {
                 <div className="inputs">
                     <div className="login-input">
                         <div>
-                        <p>Email</p>
-                        <input 
-                            type="email" 
-                            placeholder='Email' 
-                            value={email}
-                            onChange={(e) => setEmail(e.target.value)}
-                        />
+                            <p>Email</p>
+                            <input
+                                type="email"
+                                placeholder="Email"
+                                value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                            />
                         </div>
                     </div>
                     <div className="login-input">
                         <p>Password</p>
-                        <input 
-                            type="password"  
-                            placeholder='Password'
+                        <input
+                            type="password"
+                            placeholder="Password"
                             value={password}
                             onChange={(e) => setPassword(e.target.value)}
                         />
                     </div>
                 </div>
                 <div className="remember">
-                    <div className='user-type'>
+                    <div className="user-type">
                         <label>
                             <input
                                 type="radio"
                                 value="student"
-                                checked={userType === 'student'}
+                                checked={userType === 'students'}
                                 onChange={handleUserTypeChange}
                             />
                             Student
@@ -88,14 +109,16 @@ export const Login = () => {
                             Tutor
                         </label>
                     </div>
-                    <a href="#" className="forgot">Forgot Password?</a>
-
+                    <a href="#" className="forgot">
+                        Forgot Password?
+                    </a>
                 </div>
-                
-                <div className="signup">
 
-                <button className="signin" onClick={handleSignIn}>Sign In</button>
-                    <div className='new-class'>
+                <div className="signup">
+                    <button className="signin" onClick={handleSignIn}>
+                        Sign In
+                    </button>
+                    <div className="new-class">
                         <p>Don't have an account? &nbsp; </p>
                         <Link to="/signup">Sign Up</Link>
                     </div>
