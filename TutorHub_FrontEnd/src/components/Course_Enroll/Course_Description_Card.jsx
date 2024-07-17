@@ -53,15 +53,13 @@ function Course_Description_Card() {
     );
   };
 
-  const [courseImage, setCourseImage] = useState(course_img_placeholder);
-
   return (
     <div className="description-page-total">
       <Course_Search_Head />
       <div className="description-page">
         <div className="description-card">
           <div className="description-card-header">
-            <img src={courseImage} alt="Instructor" />
+            <img src={programId.image} alt="Instructor" />
           </div>
 
           <div className="description-card-badge">

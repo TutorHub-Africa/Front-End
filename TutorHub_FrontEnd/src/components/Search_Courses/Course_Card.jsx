@@ -6,8 +6,6 @@ import Star from '../../assets/star.png';
 import course_img_placeholder from '../../assets/error.png';
 
 function Course_Card({ programId }) {
-  const courseImage = course_img_placeholder;
-
   const navigate = useNavigate();
 
   function handleEnroll() {
@@ -17,7 +15,7 @@ function Course_Card({ programId }) {
   return (
     <div className="card">
       <div className="card-header">
-        <img src={courseImage} alt="Instructor" />
+        <img src={programId.image} alt="Instructor" />
       </div>
 
       <div className="card-badge">

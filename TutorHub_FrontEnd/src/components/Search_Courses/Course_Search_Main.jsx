@@ -60,6 +60,7 @@ function Course_Search_Main() {
         grade: course.grade,
         enrolled: course.enrolledStudents,
         tutorId: course.tutorId,
+        image: course.image,
       }));
 
       setSearchResults(mappedData);
