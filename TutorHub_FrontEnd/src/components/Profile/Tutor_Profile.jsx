@@ -43,7 +43,7 @@ const Tutor_Profile = () => {
 
                 setName(profileData.firstName + ' ' + profileData.lastName)
                 setEmail(profileData.email)
-                setPhone(profileData.phone)
+                setPhone(profileData.phoneNumber)
                 setBio(profileData.bio)
                 setProfilePic(profileData.imageUrl)
                 setShortDescription(profileData.shortDescription)

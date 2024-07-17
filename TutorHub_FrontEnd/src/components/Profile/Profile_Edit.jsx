@@ -54,7 +54,7 @@ export const Profile_Edit = ({
                 'http://localhost:3000/tutor/update-profile',
                 {
                     bio: tempBio,
-                    phone: tempPhone,
+                    phoneNumber: tempPhone,
                     shortDescription: tempShortDescription,
                     skill: tempSkill,
                     socialMedia: {
