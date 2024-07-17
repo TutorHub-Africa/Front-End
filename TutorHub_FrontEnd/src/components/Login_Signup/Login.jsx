@@ -5,7 +5,7 @@ import '../../styles/Login_Signup.css'
 import { googleIcon } from '../../assets/assets.js'
 import axios from 'axios'
 
-export const Login = () => {
+export const Login = ({setUserType}) => {
     const navigate_to = useNavigate();
     const [userType, setUserType] = useState('')
 
@@ -28,10 +28,12 @@ export const Login = () => {
             if (userType === 'students') {
                 localStorage.setItem('token', response.data.studentToken)
                 localStorage.setItem('userType', 'student')
+                setUserType('student')
                 navigate_to('/student')
             } else if (userType === 'tutor') {
                 localStorage.setItem('token', response.data.tutorToken)
                 localStorage.setItem('userType', 'tutor')
+                setUserType('tutor')
                 navigate_to('/tutor')
             }
             console.log(response.data)
@@ -97,7 +99,7 @@ export const Login = () => {
                             <input
                                 type="radio"
                                 value="student"
-                                checked={userType === 'students'}
+                                checked={userType === 'student'}
                                 onChange={handleUserTypeChange}
                             />
                             Student

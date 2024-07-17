@@ -18,7 +18,7 @@ import Tutor_Profile from './components/Profile/Tutor_Profile.jsx';
 import LandingPage from './components/Landing_Page.jsx';
 
 function App() {
-  const userType = localStorage.getItem('userType');
+  const [userType, setUserType] = useState(localStorage.getItem('userType'));
 
   return (
     <>
@@ -66,8 +66,8 @@ function App() {
               {userType === 'tutor' && (
                 <Route path="/tutor/profile" element={<Tutor_Profile />} />
               )}
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
+              <Route path="/login" element={<Login setUserType={setUserType} />} />
+              <Route path="/signup" element={<Signup setUserType={setUserType}/>} />
             </Routes>
           </div>
         </Router>
