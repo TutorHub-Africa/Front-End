@@ -68,11 +68,11 @@ function App() {
               )}
               <Route
                 path="/login"
-                element={<Login setUserType={(userType, setUserType)} />}
+                element={<Login setUserUserType={setUserType} />}
               />
               <Route
                 path="/signup"
-                element={<Signup setUserType={(userType, setUserType)} />}
+                element={<Signup setUserUserType={setUserType} />}
               />
             </Routes>
           </div>

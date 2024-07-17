@@ -5,9 +5,9 @@ import '../../styles/Login_Signup.css';
 import { googleIcon } from '../../assets/assets.js';
 import axios from 'axios';
 
-export const Login = ({ userType, setUserType }) => {
+export const Login = ({setUserUserType }) => {
   const navigate_to = useNavigate();
-  // const [userType, setUserType] = useState('')
+  const [userType, setUserType] = useState('')
 
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -28,12 +28,12 @@ export const Login = ({ userType, setUserType }) => {
       if (userType === 'students') {
         localStorage.setItem('token', response.data.studentToken);
         localStorage.setItem('userType', 'student');
-        setUserType('student');
+        setUserUserType('student');
         navigate_to('/student');
       } else if (userType === 'tutor') {
         localStorage.setItem('token', response.data.tutorToken);
         localStorage.setItem('userType', 'tutor');
-        setUserType('tutor');
+        setUserUserType('tutor');
         navigate_to('/tutor');
       }
       console.log(response.data);
