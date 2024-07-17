@@ -35,7 +35,7 @@ export const Signup = () => {
         } catch (error) {
             console.error('Error during sign-up:', error)
         }
-    }
+    };
 
     return (
         <div className="login_container">
