@@ -8,7 +8,9 @@ import logo_black from "../assets/header_assets/Logo-black.png";
 import Top from "./Top";
 
 
-function Header({loggedIn, user}){
+function Header({user}){
+    const loggedIn = Boolean(localStorage.getItem('token'))
+
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const toggleDropdown = () => {

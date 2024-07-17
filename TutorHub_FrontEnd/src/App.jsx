@@ -18,7 +18,7 @@ import Tutor_Profile from "./components/Profile/Tutor_Profile.jsx";
 import LandingPage from "./components/Landing_Page.jsx";
 
 function App() {
-  const [loggedIn, setLoggedIn] = useState(true)
+  const userType = localStorage.getItem('userType')
 
   return (
     <>
@@ -27,24 +27,45 @@ function App() {
       <div className="app">
           <Router>
             <header>
-            <NavBar loggedIn={loggedIn} user={'student'}/>
+            <NavBar user={'student'}/>
             </header>
             <div className="content">
               <Routes>
                 <Route path='/' element={<LandingPage />} />
-                
-                <Route path="/student" element={<Student_Course_List/>} />
-                <Route path="/student/dashboard" element={<Dashboard/>} />
 
-                <Route path="/student/courses" element={<Course_Search_Main />} />
-                <Route path="/program_details" element={<Course_Description_Card />} />
-                
+                {userType === 'student' && (
+                  <Route path="/student" element={<Student_Course_List/>} />
+                )}
+
+                {userType === 'student' && (
+                  <Route path="/student/dashboard" element={<Dashboard/>} />
+                )}
+   
+                {userType === 'student' && (
+                  <Route path="/student/courses" element={<Course_Search_Main />} />
+                )}
+
+                {userType === 'student' && (
+                  <Route path="/program_details" element={<Course_Description_Card />} />
+                )}
+                                
                 ////////////////////////////////////////////////////////
 
-                <Route path="/tutor" element={<Tutor_Course_List/>} />
-                <Route path="/tutor/dashboard" element={<Tutor_Dashboard/>} />
-                <Route path="/tutor/add_course" element={<Tutor_Course_Add />} />
-                <Route path="/tutor/profile" element={<Tutor_Profile />} />
+                {userType === 'tutor' && (
+                  <Route path="/tutor" element={<Tutor_Course_List/>} />
+                )}
+
+                {userType === 'tutor' && (
+                  <Route path="/tutor/dashboard" element={<Tutor_Dashboard/>} />
+                )}
+                
+                {userType === 'tutor' && (
+                  <Route path="/tutor/add_course" element={<Tutor_Course_Add />} />
+                )}
+
+                {userType === 'tutor' && (
+                  <Route path="/tutor/profile" element={<Tutor_Profile />} />
+                )}
 
                 <Route path="/login" element={<Login/>} />
                 <Route path="/signup" element={<Signup/>} />
