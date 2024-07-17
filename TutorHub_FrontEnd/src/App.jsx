@@ -32,9 +32,9 @@ function App() {
           <div className="content">
             <Routes>
               <Route path="/" element={<LandingPage />} />
-              {userType === 'student' && (
-                <Route path="/student" element={<Student_Course_List />} />
-              )}
+              
+              <Route path="/student" element={<Student_Course_List />} />
+
               {userType === 'student' && (
                 <Route path="/student/dashboard" element={<Dashboard />} />
               )}
@@ -51,9 +51,7 @@ function App() {
                 />
               )}
               ////////////////////////////////////////////////////////
-              {userType === 'tutor' && (
-                <Route path="/tutor" element={<Tutor_Course_List />} />
-              )}
+              <Route path="/tutor" element={<Tutor_Course_List />} />
               {userType === 'tutor' && (
                 <Route path="/tutor/dashboard" element={<Tutor_Dashboard />} />
               )}
