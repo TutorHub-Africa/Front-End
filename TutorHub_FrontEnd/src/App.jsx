@@ -27,7 +27,7 @@ function App() {
       <div className="app">
           <Router>
             <header>
-            <NavBar user={'student'}/>
+            <NavBar user={userType}/>
             </header>
             <div className="content">
               <Routes>
