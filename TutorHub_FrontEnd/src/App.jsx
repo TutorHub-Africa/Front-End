@@ -1,7 +1,7 @@
-import React from "react";
-import { useState } from "react";
-import "./App.css";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from 'react'
+import { useState } from 'react'
+import './App.css'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 import NavBar from "./components/NavBar";
 import Footer from "./components/Footer";
@@ -14,10 +14,9 @@ import Tutor_Course_List from "./components/Tutor_Main_Page/Tutor_Course_List.js
 import Tutor_Course_Add from "./components/Tutor_Course_Add/Tutor_Course_Add.jsx";
 import Login from "./components/Login_Signup/Login.jsx";
 import Signup from "./components/Login_Signup/Signup.jsx";
-import Tutor_Profile from "./components/Profile/Tutor_Profile.jsx";
 
-function App() {
-  const loggedIn = Boolean(localStorage.getItem('token'));
+function App() {}
+  const [loginStatus, setLoginStatus] = useState('loggedOut')
 
   return (
     <>
@@ -26,7 +25,7 @@ function App() {
       <div className="app">
           <Router>
             <header>
-            <NavBar user={'student'} loggedIn={true}/>
+            <NavBar status={loginStatus} user={'student'}/>
             </header>
             <div className="content">
               <Routes>
@@ -41,7 +40,6 @@ function App() {
                 <Route path="/tutor" element={<Tutor_Course_List/>} />
                 <Route path="/tutor/dashboard" element={<Tutor_Dashboard/>} />
                 <Route path="/tutor/add_course" element={<Tutor_Course_Add />} />
-                <Route path="/tutor/profile" element={<Tutor_Profile />} />
 
                 <Route path="/login" element={<Login/>} />
                 <Route path="/signup" element={<Signup/>} />

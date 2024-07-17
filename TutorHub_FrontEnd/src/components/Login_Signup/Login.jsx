@@ -26,9 +26,10 @@ export const Login = () => {
             )
             if (userType === 'students') {
                 localStorage.setItem('token', response.data.studentToken)
-            }
-            if (userType === 'tutor') {
+                localStorage.setItem('userType', 'student')
+            } else if (userType === 'tutor') {
                 localStorage.setItem('token', response.data.tutorToken)
+                localStorage.setItem('userType', 'tutor')
             }
             console.log(response.data)
         } catch (error) {

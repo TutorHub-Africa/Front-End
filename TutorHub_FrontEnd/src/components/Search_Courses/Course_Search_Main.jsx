@@ -42,9 +42,9 @@ function Course_Search_Main() {
         url += `&rate=${selectedRatingChange}`;
       }
 
-      console.log(url);
-
       const response = await axios.get(url, {});
+
+      console.log(response.data);
 
       const mappedData = response.data.map((course) => ({
         programId: course._id,
@@ -53,6 +53,13 @@ function Course_Search_Main() {
         review: course.rate,
         tutorName: course.tutorName,
         price: course.fee,
+        evaluation: course.evaluation,
+        seats: course.seatsRemaining,
+        resource: course.resource,
+        durationPerDay: course.durationPerDay,
+        grade: course.grade,
+        enrolled: course.enrolledStudents,
+        tutorId: course.tutorId,
       }));
 
       setSearchResults(mappedData);
