@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { useState } from 'react'
 import '../../styles/Login_Signup.css'
@@ -6,6 +6,7 @@ import { googleIcon } from '../../assets/assets.js'
 import axios from 'axios'
 
 export const Login = () => {
+    const navigate_to = useNavigate();
     const [userType, setUserType] = useState('')
 
     const [email, setEmail] = useState('')
@@ -27,9 +28,11 @@ export const Login = () => {
             if (userType === 'students') {
                 localStorage.setItem('token', response.data.studentToken)
                 localStorage.setItem('userType', 'student')
+                navigate_to('/student')
             } else if (userType === 'tutor') {
                 localStorage.setItem('token', response.data.tutorToken)
                 localStorage.setItem('userType', 'tutor')
+                navigate_to('/tutor')
             }
             console.log(response.data)
         } catch (error) {

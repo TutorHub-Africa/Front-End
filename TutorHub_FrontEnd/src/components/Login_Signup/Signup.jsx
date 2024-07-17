@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 import { useState } from 'react'
 import '../../styles/Login_Signup.css'
@@ -6,6 +6,7 @@ import { googleIcon } from '../../assets/assets.js'
 import axios from 'axios'
 
 export const Signup = () => {
+    const navigate_to = useNavigate();;
     const [userType, setUserType] = useState('')
 
     const [email, setEmail] = useState('')
@@ -32,6 +33,13 @@ export const Signup = () => {
                 }
             )
             console.log(response.data)
+            if(userType === 'student'){
+                navigate_to('/student')
+            }
+            else if(userType === 'tutor'){
+                navigate_to('/tutor')
+            }
+            
         } catch (error) {
             console.error('Error during sign-up:', error)
         }
