@@ -1,3 +1,132 @@
+.profile-page-cont{
+    margin-top: 25vh;
+}
+
+.profile-card {
+    margin: 20px;
+    padding: 20px;
+    margin-left: 200px;
+    margin-right: 200px;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+  }
+  
+  .profile-header {
+    display: flex;
+    align-items: center;
+    background-color: #1C1A4A;
+    color: white;
+    padding: 50px;
+    border-radius: 20px;
+  }
+  
+  .profile-pic {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .profile-profile-info {
+    width: 100%;
+  }
+  
+
+  .profile-contact-info{
+    width: 100%;
+  }
+  
+  .profile-contact-info p {
+    width: 100%;
+  }
+  
+  .icon {
+    margin-right: 10px;
+  }
+  
+  .bio {
+    margin-top: 20px;
+  }
+  
+  .social-icons {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .social-icons a{
+    color: white;
+  }
+  
+  .description-container-card {
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 30px;
+    margin-top: 30px;
+    background-color: white;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+
+  }
+  
+  .description-container-card h3 {
+    font-weight: 500;
+    font-size: 24px;
+  }
+
+  .description-container-card p{
+    color: #6D6C80;
+  }
+
+  .profile-edit-container{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    margin-left: 200px;
+    margin-right: 200px;
+    padding-left: 30px;
+    align-items: cener;
+  }
+
+  .profile-edit-container h2{
+    font-weight: 500;
+    font-size: 30px;
+  }
+  
+  .edit-profile-img-cont{
+    height: 20px;
+    width: 20px;
+    margin-left: 10px;
+  }
+
+    .edit-profile-img-cont img{
+        height: 100%;
+        width: 100%;
+    }
+
+    .edit-profile-but{
+        padding-left: 9px;
+        padding-right: 9px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 170px;
+        display: flex;
+        background-color: #FFC224;
+        color: black;
+        border:none;
+        border-radius: 10px;
+        font-size: 17px;
+        font-weight: 500;
+    }
+
+    .edit-profile-but:hover{
+        background-color: #ffb700;
+        color: black;
+    }
+
+
+/* Profile Edit */
 .login_container{
     width: 100%;
     background-color: #fff;
@@ -185,3 +314,47 @@ div .welcome{
     font-weight: 400;
     font-size: 30px;
 }
+
+
+
+.profile-edit-socials-cont{
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 5px 20px 20px 20px;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.program-add-input{
+    width: 100%;
+    padding: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+.upload-box {
+    border: 3px dashed #ddd;
+    height: 100px;
+    border-radius: 5px;
+    padding: 20px;
+    margin: 30px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .upload-box p{
+    color: #a6a5a5;
+    padding: 0px;
+  }
+  
+  /* .upload-img{
+    margin: 20px;
+  } */
+  
+  .upload-img p{
+    margin-top: -3px;
+  }

@@ -8,14 +8,15 @@ import logo_black from "../assets/header_assets/Logo-black.png";
 import Top from "./Top";
 
 
-function Header({status, user}){
+function Header({loggedIn, user}){
     const [dropdownOpen, setDropdownOpen] = useState(false);
 
     const toggleDropdown = () => {
         setDropdownOpen(!dropdownOpen);
     };
 
-    const navigate = useNavigate();
+    const navigate_login = useNavigate();
+    const navigate_profile = useNavigate();
 
     return(
         <header className="header">
@@ -88,23 +89,27 @@ function Header({status, user}){
                     </div>
                 </div>
 
-                {status === "loggedOut" && 
+                {!loggedIn && 
                     <div className="login-button-container">
                         <button 
                             className="login-button"
-                            onClick={() => {navigate('/login')}}
+                            onClick={() => {navigate_login('/login')}}
                             >
                                 Login
                         </button>
                     </div>
                 }
 
-                {status === "loggedIn" && 
+                {loggedIn && 
                     <div className="user-button-container">
                         <img src={userIcon} onClick={toggleDropdown}/>
                         {dropdownOpen && 
                             <div className="dropdown-menu">
-                                <button>View Profile</button>
+                                <button
+                                    onClick={() => {navigate_profile('/tutor/profile')}}
+                                >
+                                    View Profile
+                                </button>
                                 <button>Log Out</button>
                             </div>
                         }
