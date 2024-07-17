@@ -127,13 +127,11 @@ function Tutor_Course_Add() {
                             <p>Program Image</p>
                             <div className="upload-box">
                                 <input
-                                    type="file"
-                                    onChange={(e) => setImage(e.target.value)}
+                                    type="text"
+                                    value={image}
+                                    onChange={(e) => setSubject(e.target.value)}
+                                    placeholder="Image URL"
                                 />
-                                <div className="upload-img">
-                                    <img src={upload} />
-                                    <p>Click or Drop File</p>
-                                </div>
                             </div>
                         </div>
                     </div>
