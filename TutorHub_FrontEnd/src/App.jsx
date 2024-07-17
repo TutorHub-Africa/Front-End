@@ -15,6 +15,7 @@ import Tutor_Course_Add from "./components/Tutor_Course_Add/Tutor_Course_Add.jsx
 import Login from "./components/Login_Signup/Login.jsx";
 import Signup from "./components/Login_Signup/Signup.jsx";
 import Tutor_Profile from "./components/Profile/Tutor_Profile.jsx";
+import LandingPage from "./components/Landing_Page.jsx";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(true)
@@ -30,6 +31,8 @@ function App() {
             </header>
             <div className="content">
               <Routes>
+                <Route path='/' element={<LandingPage />} />
+                
                 <Route path="/student" element={<Student_Course_List/>} />
                 <Route path="/student/dashboard" element={<Dashboard/>} />
 

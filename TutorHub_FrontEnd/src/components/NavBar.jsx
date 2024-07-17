@@ -24,16 +24,10 @@ function Header({loggedIn, user}){
 
             <nav className="nav_container">
                 <div className="navbar-navigators">
-                    {user === "student" && (
-                    <NavLink to="/student/" className="nav_logo_container">
+                    <NavLink to="/" className="nav_logo_container">
                         <img className="nav-logo" src={logo_black} alt="Logo" />
                     </NavLink>
-                    )}  
-                    {user === "tutor" && (
-                    <NavLink to="/tutor/" className="nav_logo_container">
-                        <img className="nav-logo" src={logo_black} alt="Logo" />
-                    </NavLink>
-                    )}  
+                  
             
                     <div className="nav__menu" id="nav-menu">
                         <ul className="nav__list">
